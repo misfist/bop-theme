@@ -304,3 +304,16 @@ div.is-style-summary {
         color: var( --wp--preset--color--primary );
     }
 }
+
+
+/**
+ * Editor
+ */
+.guest-author-list li.type-guest-author.block-editor-block-preview__live-content {
+    margin-top: 0;
+}
+
+.guest-author-list .type-user .post-top[data-type='core/group'] {
+    margin-top: 0;
+}
+

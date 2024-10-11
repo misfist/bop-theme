@@ -452,6 +452,15 @@
 					}
 				}
 			},
+			"core/table": {
+				"variations": {
+					"diagram": {
+						"border": {
+							"width": "0"
+						}
+					}
+				}
+			},
 			"co-authors-plus/coauthors": {
 				"spacing": {
 					"padding": {

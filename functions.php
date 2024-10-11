@@ -25,17 +25,6 @@ function setup() {
 	 */
 	load_theme_textdomain( 'bop', get_stylesheet_directory() . '/build/languages' );
 
-	// Register navigation menus.
-	register_nav_menus(
-		array(
-			'primary'  => esc_html__( 'Primary Menu', 'quincy' ),
-			'footer'   => esc_html__( 'Footer Menu', 'quincy' ),
-			'mobile'   => esc_html__( 'Mobile Menu', 'quincy' ),
-			'footer-2' => esc_html__( 'Tertiary Footer Menu', 'quincy' ),
-			'privacy'  => esc_html__( 'Privacy Menu', 'quincy' ),
-		)
-	);
-
 	add_theme_support(
 		'custom-logo',
 		array(

@@ -68,6 +68,27 @@ function enqueue_styles() {
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );
 
 /**
+ * Unregister Styles
+ *
+ * @return void
+ */
+function register_block_styles() {
+	unregister_block_style( 'core/quote', 'plain' );
+	unregister_block_style( 'core/pullquote', 'plain' );
+	unregister_block_style( 'core/quote', 'default' );
+	unregister_block_style( 'core/pullquote', 'default' );
+
+	register_block_style(
+		'core/table',
+		array(
+			'name'  => 'diagram',
+			'label' => __( 'Diagram', 'quincy' ),
+		)
+	);
+}
+add_action( 'init', __NAMESPACE__ . '\register_block_styles', 99 );
+
+/**
  * Unregister block patterns.
  *
  * @link https://developer.wordpress.org/block-editor/reference-guides/block-api/block-patterns/#unregistering-block-patterns

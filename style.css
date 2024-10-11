@@ -93,14 +93,14 @@ div.is-style-summary {
     color: var(--wp--preset--color--white);
 }
 
-.single-page .guest-author-list {
+.bop.single-page .guest-author-list {
     margin-top: 0;
 }
 
 .guest-author-list .type-user,
 .teaser.guest-author,
 .wp-block-post.guest-author {
-    background-color: var(--wp--custom--color--gray-lightest);
+    background-color: var(--wp--preset--color--gray-lightest) !important;
 }
 
 .guest-author-list .type-user {
@@ -155,8 +155,6 @@ div.is-style-summary {
         text-decoration-thickness: 0;
         text-underline-offset: 0;
     }
-
-    .main-navigation a {}
 
     .main-navigation li {
         display: flex;

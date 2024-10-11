@@ -46,6 +46,8 @@ function setup() {
 			'header-text' => array( 'site-title', 'site-description' ),
 		)
 	);
+
+	add_editor_style( 'style.css' );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 

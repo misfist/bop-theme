@@ -26,21 +26,26 @@ use function Quincy_Institute\print_toc;
 		<?php get_sidebar( 'toc' ); ?>
 
 		<div id="post-content-body" class="post-content__inner">
-			<header class="post-header <?php echo get_post_type() . '-header'; ?>">
 
-				<?php do_action( 'post_title_before' ); ?>
+			<?php
+			$hide_title = get_post_meta( get_the_ID(), 'hide_page_title', true );
+			if( ! $hide_title ) :
+				?>
+				<header class="post-header <?php echo get_post_type() . '-header'; ?>">
 
-				<?php print_subtitle( get_the_content() ); ?>
+					<?php do_action( 'post_title_before' ); ?>
 
-				<?php the_title( '<h1 class="post-title single-title">', '</h1>' ); ?>
+					<?php the_title( '<h1 class="post-title single-title">', '</h1>' ); ?>
 
-				<div id="mobile-sidebar" class="mobile-only mobile-sidebar">
-					<?php print_download_button(); ?>
-					<?php print_toc(); ?>
-					<?php print_share_links(); ?>
-				</div>
+					<div id="mobile-sidebar" class="mobile-only mobile-sidebar">
+						<?php print_download_button(); ?>
+						<?php print_toc(); ?>
+						<?php print_share_links(); ?>
+					</div>
 
-			</header><!-- .post-header -->
+				</header><!-- .post-header -->
+				<?php 
+			endif; ?>
 			
 			<div class="post-body">
 				<?php

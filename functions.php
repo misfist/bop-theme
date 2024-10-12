@@ -28,8 +28,8 @@ function setup() {
 	add_theme_support(
 		'custom-logo',
 		array(
-			'height'      => 72,
-			'width'       => 162,
+			'height'      => 88,
+			'width'       => 198,
 			'flex-height' => true,
 			'flex-width'  => true,
 			'header-text' => array( 'site-title', 'site-description' ),

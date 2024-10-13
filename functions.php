@@ -134,8 +134,7 @@ function unregister_content_types() {
 		'theme',
 		'collection',
 	);
-	$disabled_post_types = array(
-		'country',
+	$disabled_taxonomies = array(
 		'entitiy',
 		'article_type',
 		'research_type',
@@ -146,7 +145,7 @@ function unregister_content_types() {
 		unregister_post_type( $post_type );
 	}
 
-	foreach ( $disabled_post_types as $taxonomy) {
+	foreach ( $disabled_taxonomies as $taxonomy) {
 		unregister_taxonomy( $taxonomy );
 	}
 }

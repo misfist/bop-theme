@@ -3,7 +3,7 @@
  * Template Name: Category Page
  * Template Post Type: page
  *
- * @package bop
+ * @package quincy/bop
  */
 
 use function Quincy_Institute\main_classes;

@@ -4,7 +4,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package quincy
+ * @package quincy/bop
  */
 
 use function Quincy_Institute\print_subtitle;

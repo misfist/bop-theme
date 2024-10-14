@@ -73,6 +73,13 @@ function register_block_styles() {
 			'label' => __( 'Diagram', 'quincy' ),
 		)
 	);
+	register_block_style(
+		'core/separator',
+		array(
+			'name'  => 'red',
+			'label' => __( 'Wide Red', 'quincy' ),
+		)
+	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_styles', 99 );
 

@@ -68,11 +68,15 @@ body.bop {
 }
 
 .single-research {
+    h2,
     h3 {
         font-size: var(--wp--preset--font-size--lg);
     }
-}
 
+    h2::before {
+        top: 0 !important;
+    }
+}
 
 sup.fn>a {
     font-weight: 700;

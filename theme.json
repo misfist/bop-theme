@@ -169,7 +169,7 @@
 		},
 		"typography": {
 			"dropCap": false,
-			"fluid": false,
+			"fluid": true,
 			"fontFamilies": [
 				{
 					"fontFamily": "'Source Sans Pro', sans-serif",
@@ -338,7 +338,11 @@
 					"name": "Small"
 				},
 				{
-					"size": "1rem",
+					"fluid": {
+						"max": "1.125rem",
+						"min": "1rem"
+					},
+					"size": "1.125rem",
 					"slug": "base",
 					"name": "Default"
 				},
@@ -392,6 +396,14 @@
 					"textDecoration": false
 				}
 			},
+			"core/separator": {
+				"border": {
+					"color": true,
+					"radius": false,
+					"style": true,
+					"width": true
+				}
+			},
 			"core/featured-image": {
 				"isLink": true
 			},
@@ -410,7 +422,6 @@
 			},
 			"core/button": {
 				"typography": {
-					"fontFamily": "var(--wp--preset--font-family--dm-sans)",
 					"textDecoration": false
 				}
 			},
@@ -471,6 +482,51 @@
 					"fontStyle": "italic"
 				}
 			},
+			"core/separator": {
+				"variations": {
+					"red": {
+						"border": {
+							"top": {
+								"color": "var:custom|color|red-dark",
+								"width": "1px",
+								"style": "solid"
+							}
+						}
+					}
+				}
+			},
+			"core/paragraph": {
+				"variations": {
+					"intro": {
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--dm-sans)",
+							"fontWeight": "700"
+						}
+					}
+				}
+			},
+			"core/heading": {
+				"variations": {
+					"section-heading": {
+						"typography": {
+							"fontFamily": "var:preset|font-family|noto-serif",
+							"fontWeight": "700",
+							"fontSize": "var:preset|font-size|3xl",
+							"letterSpacing": "1.08px"
+						},
+						"color": {
+							"text": "var:custom|color|primary"
+						},
+						"elements": {
+							"link": {
+								"color": {
+									"text": "var:preset|color|primary"
+								}
+							}
+						}
+					}
+				}
+			},
 			"core/post-template": {},
 			"core/navigation": {},
 			"core/post-author": {},
@@ -485,7 +541,6 @@
 			"core/site-title": {},
 			"core/search": {},
 			"core/cover": {},
-			"core/separator": {},
 			"core/button": {}
 		},
 		"color": {

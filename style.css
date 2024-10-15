@@ -189,11 +189,12 @@ div.is-style-summary {
 }
 
 .guest-author-list .type-guest-author .post-excerpt {
-    font-size: 1rem;
+    font-size: var( --wp--preset--font-size--normal );
     font-family: var( --wp--preset--font-family--source-sans );
 
     p {
         line-height: 2;
+        font-size: var( --wp--preset--font-size--normal );
     }
 }
 

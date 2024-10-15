@@ -183,12 +183,25 @@ function get_menu_label( $default_label, $post_id ) {
 add_filter( 'Quincy_Institute/get_menu_label', __NAMESPACE__ . '\get_menu_label', 10, 2 );
 
 /**
- * Adds custom classes to the array of body classes.
+ * Override author expert length
  *
- * @author WebDevStudios
+ * @param  string $excerpt
+ * @param  string $raw_bio
+ * @param  int $post_id
+ * @return string
+ */
+function author_excerpt( $excerpt, $raw_bio, $post_id ) {
+	$excerpt = wp_trim_words( $raw_bio, 150 );
+	return $excerpt;
+}
+add_filter( 'Quincy_Institute/author_excerpt', __NAMESPACE__ . '\author_excerpt', 10, 3 );
+
+/**
+ * Adds custom classes to the array of body classes.
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/body_class/
  *
  * @param array $classes Classes for the body element.
- *
  * @return array Body classes.
  */
 function body_classes( $classes ) {

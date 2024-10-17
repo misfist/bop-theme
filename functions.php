@@ -178,7 +178,8 @@ add_action( 'init', __NAMESPACE__ . '\disable_features', 10 );
  */
 function get_menu_label( $default_label, $post_id ) {
 	$default_label = get_post_field( 'post_title', $post_id );
-	return $default_label;
+	$section_navigation_label = get_post_meta( $post_id, 'section_navigation_label', true );
+	return $section_navigation_label ? $section_navigation_label : $default_label;
 }
 add_filter( 'Quincy_Institute/get_menu_label', __NAMESPACE__ . '\get_menu_label', 10, 2 );
 
@@ -219,88 +220,6 @@ function body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
-
-/**
- * Register ACF fields
- *
- * @link https://www.advancedcustomfields.com/resources/register-fields-via-php/
- *
- * @return void
- */
-function register_fields(): void {
-
-	// display_section_navigation
-	$args = array(
-		'key'                   => 'group_details',
-		'title'                 => __( 'Details', 'bop' ),
-		'fields'                => array(
-			array(
-				'key'               => 'field_download_file',
-				'label'             => __( 'Downloadable File', 'bop' ),
-				'name'              => 'download_file',
-				'aria-label'        => '',
-				'type'              => 'file',
-				'instructions'      => '',
-				'required'          => 0,
-				'conditional_logic' => 0,
-				'wrapper'           => array(
-					'width' => '',
-					'class' => '',
-					'id'    => '',
-				),
-				'return_format'     => 'url',
-				'allow_in_bindings' => 1,
-				'library'           => 'all',
-				'min_size'          => '',
-				'max_size'          => '',
-				'mime_types'        => '',
-			),
-			array(
-				'key'               => 'field_display_section_navigation',
-				'label'             => __( 'Display Section Navigation', 'bop' ),
-				'name'              => 'display_section_navigation',
-				'aria-label'        => '',
-				'type'              => 'true_false',
-				'instructions'      => '',
-				'required'          => 0,
-				'conditional_logic' => 0,
-				'wrapper'           => array(
-					'width' => '',
-					'class' => '',
-					'id'    => '',
-				),
-				'message'           => '',
-				'default_value'     => 1,
-				'allow_in_bindings' => 1,
-				'ui'                => 1,
-				'ui_on_text'        => __( 'Show', 'bop' ),
-				'ui_off_text'       => __( 'Hide', 'bop' ),
-			),
-		),
-		'location'              => array(
-			array(
-				array(
-					'param'    => 'post_type',
-					'operator' => '==',
-					'value'    => 'page',
-				),
-			),
-		),
-		'menu_order'            => 0,
-		'position'              => 'side',
-		'style'                 => 'default',
-		'label_placement'       => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen'        => '',
-		'active'                => true,
-		'description'           => '',
-		'show_in_rest'          => 1,
-	);
-
-	\acf_add_local_field_group( $args );
-}
-\add_action( 'acf/init', __NAMESPACE__ . '\register_fields' );
-
 
 /**
  * Add section navigation

@@ -243,3 +243,22 @@ function sub_navigation(): void {
 	<?php
 }
 add_action( 'site_header_after', __NAMESPACE__ . '\sub_navigation', 10 );
+
+/**
+ * Disable author pages
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/template_redirect/
+ *
+ * @return void
+ */
+function disable_author_pages(): void {
+	global $wp_query;
+
+	if ( is_author() ) {
+		$wp_query->set_404();
+		status_header( 404 );
+		// Redirect to homepage
+		wp_redirect( home_url() );
+	}
+}
+add_action( 'template_redirect', __NAMESPACE__ . '\disable_author_pages' );

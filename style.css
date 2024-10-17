@@ -310,6 +310,7 @@ div.is-style-summary {
     .main-navigation .current-menu-item,
     .main-navigation .current-menu-parent,
     .main-navigation .current_page_ancestor,
+    .main-navigation .current-page-ancestor,
     .main-navigation .current_page_item,
     .single-author .main-navigation__content>.menu-item-object-guest-author,
     .single-event .main-navigation__content>.menu-item-object-event,

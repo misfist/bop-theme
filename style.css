@@ -171,6 +171,9 @@ div.is-style-summary {
 
 }
 
+/**
+ * Participants
+ */
 .guest-author-list .type-user,
 .teaser.guest-author,
 .wp-block-post.guest-author {
@@ -178,8 +181,27 @@ div.is-style-summary {
 }
 
 .guest-author-list .type-user {
-    border-bottom: none
+    border-bottom: none;
 }
+
+.single-page .guest-author-list:first-child {
+    margin-top: 0;
+}
+
+.guest-author-list .type-guest-author .post-excerpt {
+    font-size: var( --wp--preset--font-size--normal );
+    font-family: var( --wp--preset--font-family--source-sans );
+
+    p {
+        line-height: 2;
+        font-size: var( --wp--preset--font-size--normal );
+    }
+}
+
+.bop .guest-author-list .type-guest-author .post-title,
+.bop .guest-author-list .type-user .post-header .expert-name {
+    margin-bottom: .5rem;
+} 
 
 .bop .guest-author-list .type-user .author-type {
     display: block;
@@ -187,6 +209,13 @@ div.is-style-summary {
     -webkit-box-orient: unset;
     -webkit-line-clamp: unset;
 }
+
+.bop .guest-author-list .type-guest-author .post-author-title {
+    line-height: 1.5;
+    font-weight: 400;
+    font-size: 1rem;
+}
+
 
 .teaser.guest-author,
 .wp-block-post.guest-author {
@@ -197,18 +226,6 @@ div.is-style-summary {
  * Responsive styles
  */
 @media screen and (max-width:767px) {
-    /* .site-header {
-        .custom-logo-link {
-            justify-content: flex-start;
-        }
-    
-        .custom-logo-link .custom-logo {
-            height: 100%;
-            width: auto;
-            object-fit: contain;
-        }
-    } */
-
     .site-header__content {
         padding-bottom: var(--wp--preset--spacing--2);
     }
@@ -253,8 +270,7 @@ div.is-style-summary {
     }
 
     .footer-navigation,
-    .main-navigation,
-    .section-navigation {
+    .main-navigation {
         font-weight: 400;
     }
 
@@ -316,7 +332,6 @@ div.is-style-summary {
  */
 @media screen and (min-width:1024px) {
     .section-navigation__content {
-        /* display: flex; */
         justify-content: flex-start;
 
         .menu-item,
@@ -343,14 +358,28 @@ div.is-style-summary {
     }
 
     .post-utilities {
+        margin-top: var(--wp--preset--spacing--2);
         padding-bottom: var(--wp--preset--spacing--3);
         border-bottom: 1px solid var(--wp--preset--color--secondary);
+    }
+
+    .toc-group {
+        margin-top: var(--wp--preset--spacing--1);
+    }
+
+    .wp-block-simpletoc-toc ul.simpletoc-list {
+        margin-top: 0;
     }
 }
 
 @media screen and (min-width: 1200px) {
     .bop .wp-block-quincy-people-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .bop .wp-block-quincy-people-list[data-found='1'] {
+        /* grid-template-columns: minmax(62%, 1fr); */
+        grid-template-columns: minmax(300px, 62%);
     }
 }
 

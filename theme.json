@@ -146,7 +146,7 @@
 				},
 				{
 					"name": "XX-Large",
-					"size": "4.125rem",
+					"size": "3.4375rem",
 					"slug": "5"
 				},
 				{
@@ -156,9 +156,9 @@
 				},
 				{
 					"name": "7-Large",
-					"size": "4.8125rem",
+					"size": "clamp(3.4375rem, 10vw + 4.125rem, 4.8125rem)",
 					"slug": "7"
-				},
+				},				
 				{
 					"name": "8-Large",
 					"size": "5.5rem",
@@ -339,12 +339,21 @@
 				},
 				{
 					"fluid": {
+						"max": "1rem",
+						"min": "0.875rem"
+					},
+					"size": "1rem",
+					"slug": "normal",
+					"name": "Default"
+				},
+				{
+					"fluid": {
 						"max": "1.125rem",
 						"min": "1rem"
 					},
 					"size": "1.125rem",
 					"slug": "base",
-					"name": "Default"
+					"name": "Base"
 				},
 				{
 					"size": "1.125rem",

@@ -128,17 +128,6 @@ div.is-style-summary {
     }
 }
 
-.front-page {
-    .site-header {
-        position: initial;
-        background-color: var(--wp--preset--color--primary);
-    }
-
-    .is-style-intro:not(:first-child) {
-        margin-top: var(--wp--preset--spacing--2);
-    }
-}
-
 .section .post-body {
     margin-top: 0;
     border-top: 6px solid var(--wp--preset--color--secondary);
@@ -395,6 +384,17 @@ div.is-style-summary {
  * Screen Only
  */
 @media screen {
+    .front-page {
+        .site-header {
+            position: initial;
+            background-color: var(--wp--preset--color--primary);
+        }
+    
+        .is-style-intro:not(:first-child) {
+            margin-top: var(--wp--preset--spacing--2);
+        }
+    }
+
     .front-page.has-featured-image {
         .site-main {
             padding-top: 0;
@@ -551,6 +551,7 @@ div.is-style-summary {
         text-align: center;
     }
 
+    .site-header,
     .site-footer {
         background-color: transparent;
         color: var(--wp--preset--color--primary);

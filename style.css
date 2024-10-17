@@ -334,6 +334,10 @@ div.is-style-summary {
  * Desktop Navigation
  */
 @media screen and (min-width:1024px) {
+    .bop .site-utilities-container {
+        height: auto;
+    }
+
     .section-navigation__content {
         justify-content: flex-start;
 

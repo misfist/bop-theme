@@ -119,9 +119,9 @@ function unregister_patterns() {
 	);
 
 	$instance = \WP_Block_Patterns_Registry::get_instance();
-	
+
 	foreach ( $patterns as $pattern ) {
-		if( $instance->is_registered( $pattern ) ) {
+		if ( $instance->is_registered( $pattern ) ) {
 			unregister_block_pattern( $pattern );
 		}
 	}
@@ -152,7 +152,7 @@ function unregister_content_types() {
 		unregister_post_type( $post_type );
 	}
 
-	foreach ( $disabled_taxonomies as $taxonomy) {
+	foreach ( $disabled_taxonomies as $taxonomy ) {
 		unregister_taxonomy( $taxonomy );
 	}
 }
@@ -177,7 +177,7 @@ add_action( 'init', __NAMESPACE__ . '\disable_features', 10 );
  * @return void
  */
 function get_menu_label( $default_label, $post_id ) {
-	$default_label = get_post_field( 'post_title', $post_id );
+	$default_label            = get_post_field( 'post_title', $post_id );
 	$section_navigation_label = get_post_meta( $post_id, 'section_navigation_label', true );
 	return $section_navigation_label ? $section_navigation_label : $default_label;
 }
@@ -188,7 +188,7 @@ add_filter( 'Quincy_Institute/get_menu_label', __NAMESPACE__ . '\get_menu_label'
  *
  * @param  string $excerpt
  * @param  string $raw_bio
- * @param  int $post_id
+ * @param  int    $post_id
  * @return string
  */
 function author_excerpt( $excerpt, $raw_bio, $post_id ) {
@@ -199,7 +199,7 @@ add_filter( 'Quincy_Institute/author_excerpt', __NAMESPACE__ . '\author_excerpt'
 
 /**
  * Adds custom classes to the array of body classes.
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/body_class/
  *
  * @param array $classes Classes for the body element.

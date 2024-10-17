@@ -387,7 +387,7 @@ div.is-style-summary {
 
     .bop .wp-block-quincy-people-list[data-found='1'] {
         /* grid-template-columns: minmax(62%, 1fr); */
-        grid-template-columns: minmax(300px, 62%);
+        /* grid-template-columns: minmax(300px, 62%); */
     }
 }
 

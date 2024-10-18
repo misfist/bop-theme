@@ -11,6 +11,7 @@ namespace Quincy\bop;
 use function Quincy_Institute\get_root_ancestor_id;
 use function Quincy_Institute\get_page_list;
 use function Quincy_Institute\print_section_navigation;
+use function Quincy_Institute\get_author_excerpt;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -119,9 +120,9 @@ function unregister_patterns() {
 	);
 
 	$instance = \WP_Block_Patterns_Registry::get_instance();
-	
+
 	foreach ( $patterns as $pattern ) {
-		if( $instance->is_registered( $pattern ) ) {
+		if ( $instance->is_registered( $pattern ) ) {
 			unregister_block_pattern( $pattern );
 		}
 	}
@@ -152,7 +153,7 @@ function unregister_content_types() {
 		unregister_post_type( $post_type );
 	}
 
-	foreach ( $disabled_taxonomies as $taxonomy) {
+	foreach ( $disabled_taxonomies as $taxonomy ) {
 		unregister_taxonomy( $taxonomy );
 	}
 }
@@ -177,8 +178,9 @@ add_action( 'init', __NAMESPACE__ . '\disable_features', 10 );
  * @return void
  */
 function get_menu_label( $default_label, $post_id ) {
-	$default_label = get_post_field( 'post_title', $post_id );
-	return $default_label;
+	$default_label            = get_post_field( 'post_title', $post_id );
+	$section_navigation_label = get_post_meta( $post_id, 'section_navigation_label', true );
+	return $section_navigation_label ? $section_navigation_label : $default_label;
 }
 add_filter( 'Quincy_Institute/get_menu_label', __NAMESPACE__ . '\get_menu_label', 10, 2 );
 
@@ -187,7 +189,7 @@ add_filter( 'Quincy_Institute/get_menu_label', __NAMESPACE__ . '\get_menu_label'
  *
  * @param  string $excerpt
  * @param  string $raw_bio
- * @param  int $post_id
+ * @param  int    $post_id
  * @return string
  */
 function author_excerpt( $excerpt, $raw_bio, $post_id ) {
@@ -197,8 +199,26 @@ function author_excerpt( $excerpt, $raw_bio, $post_id ) {
 add_filter( 'Quincy_Institute/author_excerpt', __NAMESPACE__ . '\author_excerpt', 10, 3 );
 
 /**
+ * Render User Excerpt
+ *
+ * @param  int $post_id
+ * @return void
+ */
+function print_author_excerpt( $post_id = 0 ) : void {
+	global $post;
+	$post_id = ( $post_id ) ? (int) $post_id : get_the_ID();
+	if ( ( $bio = get_author_excerpt( $post_id ) ) && ! is_wp_error( $bio ) && 'string' == gettype( $bio ) ) :
+		?>
+		<div class="post-excerpt">
+			<?php echo apply_filters( 'the_excerpt', $bio ); ?>
+		</div><!-- .post-excerpt -->
+		<?php
+	endif;
+}
+
+/**
  * Adds custom classes to the array of body classes.
- * 
+ *
  * @link https://developer.wordpress.org/reference/hooks/body_class/
  *
  * @param array $classes Classes for the body element.
@@ -219,88 +239,6 @@ function body_classes( $classes ) {
 	return $classes;
 }
 add_filter( 'body_class', __NAMESPACE__ . '\body_classes' );
-
-/**
- * Register ACF fields
- *
- * @link https://www.advancedcustomfields.com/resources/register-fields-via-php/
- *
- * @return void
- */
-function register_fields(): void {
-
-	// display_section_navigation
-	$args = array(
-		'key'                   => 'group_details',
-		'title'                 => __( 'Details', 'bop' ),
-		'fields'                => array(
-			array(
-				'key'               => 'field_download_file',
-				'label'             => __( 'Downloadable File', 'bop' ),
-				'name'              => 'download_file',
-				'aria-label'        => '',
-				'type'              => 'file',
-				'instructions'      => '',
-				'required'          => 0,
-				'conditional_logic' => 0,
-				'wrapper'           => array(
-					'width' => '',
-					'class' => '',
-					'id'    => '',
-				),
-				'return_format'     => 'url',
-				'allow_in_bindings' => 1,
-				'library'           => 'all',
-				'min_size'          => '',
-				'max_size'          => '',
-				'mime_types'        => '',
-			),
-			array(
-				'key'               => 'field_display_section_navigation',
-				'label'             => __( 'Display Section Navigation', 'bop' ),
-				'name'              => 'display_section_navigation',
-				'aria-label'        => '',
-				'type'              => 'true_false',
-				'instructions'      => '',
-				'required'          => 0,
-				'conditional_logic' => 0,
-				'wrapper'           => array(
-					'width' => '',
-					'class' => '',
-					'id'    => '',
-				),
-				'message'           => '',
-				'default_value'     => 1,
-				'allow_in_bindings' => 1,
-				'ui'                => 1,
-				'ui_on_text'        => __( 'Show', 'bop' ),
-				'ui_off_text'       => __( 'Hide', 'bop' ),
-			),
-		),
-		'location'              => array(
-			array(
-				array(
-					'param'    => 'post_type',
-					'operator' => '==',
-					'value'    => 'page',
-				),
-			),
-		),
-		'menu_order'            => 0,
-		'position'              => 'side',
-		'style'                 => 'default',
-		'label_placement'       => 'top',
-		'instruction_placement' => 'label',
-		'hide_on_screen'        => '',
-		'active'                => true,
-		'description'           => '',
-		'show_in_rest'          => 1,
-	);
-
-	\acf_add_local_field_group( $args );
-}
-\add_action( 'acf/init', __NAMESPACE__ . '\register_fields' );
-
 
 /**
  * Add section navigation
@@ -324,3 +262,22 @@ function sub_navigation(): void {
 	<?php
 }
 add_action( 'site_header_after', __NAMESPACE__ . '\sub_navigation', 10 );
+
+/**
+ * Disable author pages
+ * 
+ * @link https://developer.wordpress.org/reference/hooks/template_redirect/
+ *
+ * @return void
+ */
+function disable_author_pages(): void {
+	global $wp_query;
+
+	if ( is_author() ) {
+		$wp_query->set_404();
+		status_header( 404 );
+		// Redirect to homepage
+		wp_redirect( home_url() );
+	}
+}
+add_action( 'template_redirect', __NAMESPACE__ . '\disable_author_pages' );

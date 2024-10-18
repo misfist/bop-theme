@@ -11,6 +11,7 @@ namespace Quincy\bop;
 use function Quincy_Institute\get_root_ancestor_id;
 use function Quincy_Institute\get_page_list;
 use function Quincy_Institute\print_section_navigation;
+use function Quincy_Institute\get_author_excerpt;
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -196,6 +197,24 @@ function author_excerpt( $excerpt, $raw_bio, $post_id ) {
 	return $excerpt;
 }
 add_filter( 'Quincy_Institute/author_excerpt', __NAMESPACE__ . '\author_excerpt', 10, 3 );
+
+/**
+ * Render User Excerpt
+ *
+ * @param  int $post_id
+ * @return void
+ */
+function print_author_excerpt( $post_id = 0 ) : void {
+	global $post;
+	$post_id = ( $post_id ) ? (int) $post_id : get_the_ID();
+	if ( ( $bio = get_author_excerpt( $post_id ) ) && ! is_wp_error( $bio ) && 'string' == gettype( $bio ) ) :
+		?>
+		<div class="post-excerpt">
+			<?php echo apply_filters( 'the_excerpt', $bio ); ?>
+		</div><!-- .post-excerpt -->
+		<?php
+	endif;
+}
 
 /**
  * Adds custom classes to the array of body classes.

@@ -13,7 +13,7 @@ use function Quincy_Institute\print_author_website_link;
 use function Quincy_Institute\print_author_link;
 use function Quincy_Institute\print_author_social_network_links;
 use function Quincy_Institute\print_author_title;
-use function Quincy_Institute\print_author_excerpt;
+use function Quincy\bop\print_author_excerpt;
 $post_id = ( $args && isset( $args['post_id'] ) ) ? (int) $args['post_id'] : get_the_ID();
 $link    = ( $args && isset( $args['link_name'] ) ) ? esc_attr( $args['link_name'] ) : null;
 $url     = ( 'website' === $link ) ? get_author_website_url( $post_id ) : get_author_url( $post_id );
@@ -69,14 +69,7 @@ $url     = ( 'website' === $link ) ? get_author_website_url( $post_id ) : get_au
 				?>
 			</h2>
 
-			<?php
-			$title = get_post_meta( $post_id, 'expert_title', true );
-			if( $title ) :
-				?>
-				<div class="post-author-title author-type"><?php echo esc_html( $title ); ?></div>
-				<?php
-			endif;
-			?>
+			<?php print_author_title( $post_id ); ?>
 			
 		</header><!-- .post-header -->
 

@@ -335,6 +335,7 @@ div.is-style-summary {
         .page_item {
             width: max-content;
             max-width: max-content;
+            transition: background-color 0.3s linear;
         }
     }
 
@@ -400,8 +401,8 @@ div.is-style-summary {
             padding-top: 0;
         }
 
-        .wp-block-post-featured-image.wp-post-image {
-            max-height: 750px;
+        .wp-block-post-featured-image .wp-post-image {
+            max-height: 550px;
         }
     }
     

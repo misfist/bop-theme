@@ -12,7 +12,7 @@ jobs:
               uses: wpengine/github-action-wpe-site-deploy@v3
               with:
                   WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-                  WPE_ENV: quincyinstdev
+                  WPE_ENV: betterorderdev
                   SRC_PATH: './'
                   REMOTE_PATH: 'wp-content/themes/bop/'
                   FLAGS: -azvr --inplace --delete --exclude=".*"

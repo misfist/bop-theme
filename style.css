@@ -40,15 +40,13 @@ body.bop {
         margin-top: 0 !important;
     }
 
-    .is-style-intro {
-        font-family: var(--wp--preset--font-family--dm-sans);
-        font-size: var(--wp--preset--font-size--md);
-        font-style: normal;
-        font-weight: 700;
-        line-height: 1.3;
+    .is-style-section-heading,
+    .section__people .section__header .wp-block-heading {
+        letter-spacing: 1.08px;
+        font-size: var(--wp--preset--font-size--3-xl);
     }
 
-    .is-style-section-heading {
+    .section__people .wp-block-heading {
         letter-spacing: 1.08px;
         font-size: var(--wp--preset--font-size--3-xl);
     }
@@ -65,6 +63,21 @@ body.bop {
             margin-top: var(--wp--preset--spacing--5);
         }
     }
+}
+
+.is-style-intro {
+    font-family: var(--wp--preset--font-family--dm-sans);
+    font-size: var(--wp--preset--font-size--md);
+    font-style: normal;
+    font-weight: 700;
+    line-height: 1.3;
+}
+
+.is-style-chart-heading {
+    background-color: var(--wp--preset--color--primary);
+    color: var(--wp--preset--color--white);
+    font-family: var(--wp--preset--font-family--dm-sans);
+    padding: .5rem 1rem;
 }
 
 .single-research .post-content :not(.is-style-summary) h3 {

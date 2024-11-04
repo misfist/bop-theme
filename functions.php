@@ -88,6 +88,13 @@ function register_block_styles() {
 			'label' => __( 'Alpha Bullets', 'quincy' ),
 		)
 	);
+	register_block_style(
+		'core/heading',
+		array(
+			'name'  => 'chart-heading',
+			'label' => __( 'Chart Heading', 'quincy' ),
+		)
+	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_styles', 99 );
 

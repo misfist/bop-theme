@@ -538,8 +538,16 @@ div.is-style-summary {
         border: none;
     }
 
+    .is-style-diagram {
+
+    }
+
     .is-style-diagram td {
         vertical-align: top
+    }
+
+    .is-style-diagram td:empty {
+        display: none;
     }
 
     .is-style-diagram table thead th {

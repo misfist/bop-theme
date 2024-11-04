@@ -175,9 +175,12 @@ div.is-style-summary {
     
         ul ul {
             margin-top: .5rem;
+        }
+
+        ul li li {
             list-style-type: circle;
         }
-    
+
         .is-style-alpha {
             list-style-type: lower-alpha;
         }

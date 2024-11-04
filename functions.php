@@ -81,6 +81,13 @@ function register_block_styles() {
 			'label' => __( 'Wide Red', 'quincy' ),
 		)
 	);
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'alpha',
+			'label' => __( 'Alpha Bullets', 'quincy' ),
+		)
+	);
 }
 add_action( 'init', __NAMESPACE__ . '\register_block_styles', 99 );
 

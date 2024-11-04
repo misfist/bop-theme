@@ -626,22 +626,20 @@ div.is-style-summary {
     .is-style-diagram tbody td::before {
         content: attr(data-label);
         font-family: var(--wp--preset--font-family--dm-sans);
-        font-size: var(--wp--preset--font-size--md);
+        font-size: var(--wp--preset--font-size--lg);
         font-weight: 700;
+        display: block;
+        width: 100%;
+        margin-bottom: .5em;
         text-transform: uppercase;
-    }
-
-    .is-style-diagram td {
-        display: flex;
-        flex-wrap: wrap;
-    }
-
-    .is-style-diagram td:empty {
-        display: none;
     }
 
     .is-style-diagram td>* {
         flex-basis: 100%;
+    }
+
+    .wp-block-columns.is-style-diagram {
+        gap: var(--wp--preset--spacing--1);
     }
 
 }

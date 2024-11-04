@@ -467,6 +467,64 @@ div.is-style-summary {
         text-align: center;
     }
 
+    /* Columns */
+    .wp-block-columns.is-style-diagram {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr)) !important;
+        gap: var(--wp--preset--spacing--2) !important;
+    }
+
+    .is-style-diagram .wp-block-column {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: var(--wp--preset--spacing--2);
+        align-self: flex-start;
+    }
+
+    .is-style-diagram .wp-block-heading,
+    .is-style-diagram p {
+        padding: var(--wp--preset--spacing--2);
+        border-radius: var(--wp--preset--spacing--2);
+        border: none;
+    }
+
+    .is-style-diagram .wp-block-heading {
+        font-family: var(--wp--preset--font-family--dm-sans);
+        font-size: var(--wp--preset--font-size--md);
+        text-transform: uppercase;
+        color: var(--wp--preset--color--white);
+    }
+
+    .is-style-diagram p {
+        margin: 0;
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+1) .wp-block-heading {
+        background-color: var(--wp--preset--color--secondary);
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+1) p {
+        background-color: var(--wp--custom--color--pink);
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+2) .wp-block-heading {
+        background-color: var(--wp--preset--color--primary);
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+2) p {
+        background-color: var(--wp--custom--color--blue-lightest);
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+3) .wp-block-heading {
+        background-color: var(--wp--preset--color--tertiary);
+    }
+
+    .is-style-diagram .wp-block-column:nth-child(3n+3) p {
+        background-color: var(--wp--custom--color--blue-gray);
+    }
+
+    /* Table */
+
     .is-style-diagram table {
         border: none;
         border-collapse: separate;

@@ -75,6 +75,13 @@ function register_block_styles() {
 		)
 	);
 	register_block_style(
+		'core/columns',
+		array(
+			'name'  => 'diagram',
+			'label' => __( 'Diagram', 'quincy' ),
+		)
+	);
+	register_block_style(
 		'core/separator',
 		array(
 			'name'  => 'red',

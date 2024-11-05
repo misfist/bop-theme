@@ -14,6 +14,6 @@ jobs:
                   WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
                   WPE_ENV: betterorderstg
                   SRC_PATH: './'
-                  REMOTE_PATH: 'wp-content/themes/bop'
+                  REMOTE_PATH: 'wp-content/themes/bop/'
                   FLAGS: -azvr --inplace --delete --exclude=".*"
                   CACHE_CLEAR: TRUE

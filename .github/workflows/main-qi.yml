@@ -1,8 +1,8 @@
-name: Deploy to Staging
+name: Deploy to Production - QI
 on:
     push:
         branches:
-            - staging
+            - main
 jobs:
     build:
         runs-on: ubuntu-latest
@@ -12,7 +12,7 @@ jobs:
               uses: wpengine/github-action-wpe-site-deploy@v3
               with:
                   WPE_SSHG_KEY_PRIVATE: ${{ secrets.WPE_SSHG_KEY_PRIVATE }}
-                  WPE_ENV: betterorderstg
+                  WPE_ENV: quincyinst
                   SRC_PATH: './'
                   REMOTE_PATH: 'wp-content/themes/bop/'
                   FLAGS: -azvr --inplace --delete --exclude=".*"

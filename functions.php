@@ -98,6 +98,13 @@ function register_block_styles() {
 	register_block_style(
 		'core/heading',
 		array(
+			'name'  => 'embellished',
+			'label' => __( 'Embellished', 'quincy' ),
+		)
+	);
+	register_block_style(
+		'core/heading',
+		array(
 			'name'  => 'chart-heading',
 			'label' => __( 'Chart Heading', 'quincy' ),
 		)

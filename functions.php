@@ -75,10 +75,31 @@ function register_block_styles() {
 		)
 	);
 	register_block_style(
+		'core/columns',
+		array(
+			'name'  => 'diagram',
+			'label' => __( 'Diagram', 'quincy' ),
+		)
+	);
+	register_block_style(
 		'core/separator',
 		array(
 			'name'  => 'red',
 			'label' => __( 'Wide Red', 'quincy' ),
+		)
+	);
+	register_block_style(
+		'core/list',
+		array(
+			'name'  => 'alpha',
+			'label' => __( 'Alpha Bullets', 'quincy' ),
+		)
+	);
+	register_block_style(
+		'core/heading',
+		array(
+			'name'  => 'chart-heading',
+			'label' => __( 'Chart Heading', 'quincy' ),
 		)
 	);
 }

@@ -18,8 +18,54 @@ body.bop {
     font-family: var(--wp--preset--font-family--dm-sans);
 }
 
+.bop:where(.hide-page-title) .post-title {
+    display: initial;
+}
+
+:where(.hide-page-title) .page-title {
+    display: none;
+}
+
 .wp-block-heading {
     font-weight: 700;
+    font-family: var( --wp--preset--font-family--dm-sans );
+    color: var( --wp--preset--color--gray-darkest );
+}
+
+h1.wp-block-heading,
+.wp-block-heading.is-style-section-heading,
+.section .wp-block-heading {
+    font-size: var( --wp--preset--font-size--3-xl );
+    color: var( --wp--preset--color--primary );
+    letter-spacing: 1.08px;
+}
+
+h1.wp-block-heading,
+.single-title {
+    font-family: var( --wp--preset--font-family--noto-serif );
+    color: var( --wp--preset--color--primary );
+}
+
+h1.wp-block-heading::after,
+.wp-block-heading.is-style-section-heading::after,
+.section .wp-block-heading::after {
+    border-bottom-width: 7px;
+    border-color: var(--wp--preset--color--secondary);
+    border-style: solid;
+    display: block;
+    margin-bottom: 1.375rem;
+    margin-top: 1.375rem;
+    width: var( --wp--preset--spacing--9 );
+    content: "";
+}
+
+h2.wp-block-heading.is-style-section-heading,
+h3.wp-block-heading.is-style-section-heading,
+h4.wp-block-heading.is-style-section-heading,
+h5.wp-block-heading.is-style-section-heading,
+h6.wp-block-heading.is-style-section-heading {
+    letter-spacing: normal;
+    font-family: var( --wp--preset--font-family--dm-sans );
 }
 
 .bop,
@@ -40,12 +86,6 @@ body.bop {
         margin-top: 0 !important;
     }
 
-    .is-style-section-heading,
-    .section__people .section__header .wp-block-heading {
-        letter-spacing: 1.08px;
-        font-size: var(--wp--preset--font-size--3-xl);
-    }
-
     .section__people .wp-block-heading {
         letter-spacing: 1.08px;
         font-size: var(--wp--preset--font-size--3-xl);
@@ -53,6 +93,41 @@ body.bop {
 
     .is-style-section-heading+p {
         margin-top: var(--wp--preset--spacing--4);
+    }
+
+    .post-body {
+        ol {
+            list-style-type: decimal;
+    
+            ol,
+            ul {
+                margin-top: .5rem;
+                list-style-type: lower-alpha;
+            }
+        }
+    
+        ul ul {
+            margin-top: .5rem;
+        }
+
+        ul li li {
+            list-style-type: circle;
+        }
+
+        .is-style-alpha {
+            list-style-type: lower-alpha;
+        }
+    
+        li + li {
+            margin-top: .5rem;
+        }
+    
+    }
+
+    .post-body > .wp-block-image img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
     }
 
     .section {
@@ -156,46 +231,11 @@ div.is-style-summary {
         color: var(--wp--preset--color--white);
     }
 
-    .page-title {
+    /* .page-title {
         font-family: var(--wp--preset--font-family--dm-sans);
         font-size: var(--wp--preset--spacing--3);
         color: var(--wp--preset--color--gray-darkest);
-    }
-
-    .post-body {
-        ol {
-            list-style-type: decimal;
-    
-            ol,
-            ul {
-                margin-top: .5rem;
-                list-style-type: lower-alpha;
-            }
-        }
-    
-        ul ul {
-            margin-top: .5rem;
-        }
-
-        ul li li {
-            list-style-type: circle;
-        }
-
-        .is-style-alpha {
-            list-style-type: lower-alpha;
-        }
-    
-        li + li {
-            margin-top: .5rem;
-        }
-    
-    }
-
-    .post-body > .wp-block-image img {
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+    } */
 
     :where(:not(.section-about)) .section__people {
         border-top: none;

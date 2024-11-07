@@ -158,14 +158,25 @@
 					"name": "7-Large",
 					"size": "clamp(3.4375rem, 10vw + 4.125rem, 4.8125rem)",
 					"slug": "7"
-				},				
+				},
 				{
 					"name": "8-Large",
 					"size": "5.5rem",
 					"slug": "8"
+				},
+				{
+					"name": "9-Large",
+					"size": "6.1875rem",
+					"slug": "9"
 				}
 			],
-			"units": [ "%", "px", "rem", "vh", "vw" ]
+			"units": [
+				"%",
+				"px",
+				"rem",
+				"vh",
+				"vw"
+			]
 		},
 		"typography": {
 			"dropCap": false,
@@ -504,21 +515,10 @@
 					}
 				}
 			},
-			"core/paragraph": {
-				"variations": {
-					"intro": {
-						"typography": {
-							"fontFamily": "var(--wp--preset--font-family--dm-sans)",
-							"fontWeight": "700"
-						}
-					}
-				}
-			},
 			"core/heading": {
 				"variations": {
 					"section-heading": {
 						"typography": {
-							"fontFamily": "var:preset|font-family|noto-serif",
 							"fontWeight": "700",
 							"fontSize": "var:preset|font-size|3xl",
 							"letterSpacing": "1.08px"
@@ -532,6 +532,16 @@
 									"text": "var:preset|color|primary"
 								}
 							}
+						}
+					}
+				}
+			},
+			"core/paragraph": {
+				"variations": {
+					"intro": {
+						"typography": {
+							"fontFamily": "var(--wp--preset--font-family--dm-sans)",
+							"fontWeight": "700"
 						}
 					}
 				}
@@ -558,23 +568,24 @@
 		},
 		"elements": {
 			"button": {
-				"typography":{ 
+				"typography": {
 					"textDecoration": false
 				}
 			},
-			"h1": {},
-			"h2": {},
-			"h3": {},
-			"h4": {},
-			"h5": {},
-			"h6": {},
 			"heading": {
-				"typography":{ 
+				"typography": {
+					"fontFamily": "var:preset|font-family|dm-sans",
+					"fontWeight": "700",
 					"textDecoration": false
+				}
+			},
+			"h3": {
+				"color": {
+					"text": "var:preset|color|primary"
 				}
 			},
 			"link": {
-				"typography":{ 
+				"typography": {
 					"textDecoration": false
 				}
 			},

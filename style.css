@@ -275,7 +275,7 @@ div.is-style-summary {
     font-family: var( --wp--preset--font-family--source-sans );
 
     p {
-        line-height: 2;
+        line-height: 1.6;
         font-size: var( --wp--preset--font-size--normal );
     }
 }

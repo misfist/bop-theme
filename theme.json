@@ -521,6 +521,7 @@
 					"section-heading": {
 						"typography": {
 							"fontWeight": "700",
+							"fontFamily": "var:preset|font-family|noto-serif",
 							"fontSize": "var:preset|font-size|3xl",
 							"letterSpacing": "1.08px"
 						},

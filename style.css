@@ -59,7 +59,10 @@ h1.wp-block-heading::after,
     content: "";
 }
 
-h2.wp-block-heading.is-style-section-heading,
+.wp-block-heading::before {
+    content: none !important;
+}
+
 h3.wp-block-heading.is-style-section-heading,
 h4.wp-block-heading.is-style-section-heading,
 h5.wp-block-heading.is-style-section-heading,

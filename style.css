@@ -303,6 +303,10 @@ div.is-style-summary {
     border-bottom: 1px solid var(--wp--custom--color--gray-darkest);
 }
 
+.wp-block-quincy-people-list {
+    grid-template-columns: 1fr !important;
+}
+
 /**
  * Responsive styles
  */
@@ -400,13 +404,13 @@ div.is-style-summary {
     /**
      * Participant List
      */
-    .wp-block-quincy-people-list {
+    /* .wp-block-quincy-people-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    } */
 
-    .wp-block-quincy-people-list[data-found='1'] {
+    /* .wp-block-quincy-people-list[data-found='1'] {
         grid-template-columns: minmax(18rem, .6fr);
-    }
+    } */
 }
 
 /**
@@ -460,9 +464,9 @@ div.is-style-summary {
 }
 
 @media screen and (min-width: 1200px) {
-    .bop .wp-block-quincy-people-list {
+    /* .bop .wp-block-quincy-people-list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    } */
 
     .bop .wp-block-quincy-people-list[data-found='1'] {
         /* grid-template-columns: minmax(62%, 1fr); */

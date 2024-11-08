@@ -12,6 +12,8 @@ use function Quincy_Institute\get_root_ancestor_id;
 use function Quincy_Institute\get_page_list;
 use function Quincy_Institute\print_section_navigation;
 use function Quincy_Institute\get_author_excerpt;
+use function Quincy_Institute\get_post_content;
+
 require_once get_stylesheet_directory() . '/inc/customizer/customizer.php';
 
 /**
@@ -286,20 +288,16 @@ function sub_navigation(): void {
 add_action( 'site_header_after', __NAMESPACE__ . '\sub_navigation', 10 );
 
 /**
- * Disable author pages
- * 
- * @link https://developer.wordpress.org/reference/hooks/template_redirect/
+ * Print the site footer
  *
  * @return void
  */
-function disable_author_pages(): void {
-	global $wp_query;
+function print_copyright_text(): void {
+	$copyright_text = get_theme_mod( 'copyright_text' );
 
-	if ( is_author() ) {
-		$wp_query->set_404();
-		status_header( 404 );
-		// Redirect to homepage
-		wp_redirect( home_url() );
+	if ( $copyright_text ) {
+		echo get_post_content( do_shortcode( $copyright_text ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- XSS OK.
+	} else {
+		echo '&copy; ' . date( 'Y' ) . ' ' . get_bloginfo( 'name' );
 	}
 }
-add_action( 'template_redirect', __NAMESPACE__ . '\disable_author_pages' );

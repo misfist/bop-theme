@@ -34,7 +34,7 @@ body.bop {
 
 h1.wp-block-heading,
 .wp-block-heading.is-style-section-heading,
-.section .wp-block-heading {
+.section__header .wp-block-heading {
     font-size: var( --wp--preset--font-size--3-xl );
     color: var( --wp--preset--color--primary );
 }
@@ -48,7 +48,7 @@ h1.wp-block-heading,
 
 h1.wp-block-heading::after,
 .wp-block-heading.is-style-section-heading::after,
-.section .wp-block-heading::after {
+.section__header .wp-block-heading::after {
     border-bottom-width: 7px;
     border-color: var(--wp--preset--color--secondary);
     border-style: solid;
@@ -87,11 +87,6 @@ h6.wp-block-heading.is-style-section-heading {
 
     .screen-reader-text + p {
         margin-top: 0 !important;
-    }
-
-    .section__people .wp-block-heading {
-        letter-spacing: 1.08px;
-        font-size: var(--wp--preset--font-size--3-xl);
     }
 
     .is-style-section-heading+p {

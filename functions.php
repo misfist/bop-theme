@@ -12,6 +12,7 @@ use function Quincy_Institute\get_root_ancestor_id;
 use function Quincy_Institute\get_page_list;
 use function Quincy_Institute\print_section_navigation;
 use function Quincy_Institute\get_author_excerpt;
+require_once get_stylesheet_directory() . '/inc/customizer/customizer.php';
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

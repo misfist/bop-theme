@@ -146,6 +146,10 @@ h6.wp-block-heading.is-style-section-heading {
     }
 }
 
+.wpforms-hidden {
+    display: none;
+}
+
 .is-style-intro {
     font-family: var(--wp--preset--font-family--dm-sans);
     font-size: var(--wp--preset--font-size--md);

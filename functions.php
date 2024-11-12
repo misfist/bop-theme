@@ -54,12 +54,12 @@ add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
  * @link https://developer.wordpress.org/reference/hooks/wp_enqueue_scripts/
  */
 function enqueue_styles() {
-	wp_enqueue_style( 'quincy-institute-style', get_template_directory_uri() . '/build/index.css' );
+	// wp_enqueue_style( 'quincy-institute-style', get_template_directory_uri() . '/build/index.css' );
 
 	wp_enqueue_style(
 		'bop-style',
 		get_stylesheet_directory_uri() . '/style.css',
-		array( 'quincy-institute-style' )
+		array( 'quincy-styles' )
 	);
 }
 add_action( 'wp_enqueue_scripts', __NAMESPACE__ . '\enqueue_styles' );

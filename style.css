@@ -47,6 +47,7 @@ h1.wp-block-heading,
 }
 
 h1.wp-block-heading::after,
+.single-title::after,
 .wp-block-heading.is-style-section-heading::after,
 .section__header .wp-block-heading::after {
     border-bottom-width: 7px;
@@ -143,6 +144,10 @@ h6.wp-block-heading.is-style-section-heading {
             margin-top: var(--wp--preset--spacing--5);
         }
     }
+}
+
+.wpforms-hidden {
+    display: none;
 }
 
 .is-style-intro {

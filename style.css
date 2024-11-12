@@ -519,7 +519,7 @@ div.is-style-summary {
     /* Columns */
     .wp-block-columns.is-style-diagram {
         display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(min(24rem, 100%), 1fr)) !important;
+        grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr)) !important;
         gap: var(--wp--preset--spacing--2) !important;
     }
 

@@ -1,0 +1,18 @@
+@use './legacy/index.scss' as *;
+
+:where(.hide-page-title) .post-title:not(.not-sr-only) {
+    height: auto;
+    margin: initial;
+    overflow: initial;
+    padding: initial;
+    position: initial;
+    width: auto;
+    clip: unset;
+    border-width: 0;
+    white-space: initial;
+}
+
+h1.wp-block-heading,
+.single-title {
+    letter-spacing: initial;
+}

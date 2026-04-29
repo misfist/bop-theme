@@ -44,7 +44,7 @@ function setup() {
 		)
 	);
 
-	add_editor_style( 'style.css' );
+	add_editor_style( 'build/css/style.css' );
 }
 add_action( 'after_setup_theme', __NAMESPACE__ . '\setup' );
 
@@ -58,7 +58,7 @@ function enqueue_styles() {
 
 	wp_enqueue_style(
 		'bop-style',
-		get_stylesheet_directory_uri() . '/style.css',
+		get_stylesheet_directory_uri() . '/build/style.css',
 		array( 'quincy-styles' )
 	);
 }

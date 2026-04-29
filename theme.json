@@ -16,6 +16,7 @@
 				"blue-dark": "#273052",
 				"blue-darkest": "#2D3040",
 				"blue-light": "#3A4778",
+				"blue-lightest": "#c4c8d7",
 				"gray-darkest": "#222222",
 				"gray-dark": "#828282",
 				"gray": "#4F4F4F",
@@ -103,8 +104,8 @@
 			"width": true
 		},
 		"layout": {
-			"contentSize": "1248px",
-			"wideSize": "1440px"
+			"contentSize": "60rem",
+			"wideSize": "76rem"
 		},
 		"spacing": {
 			"margin": false,

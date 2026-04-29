@@ -16,6 +16,7 @@
 				"blue-dark": "#273052",
 				"blue-darkest": "#2D3040",
 				"blue-light": "#3A4778",
+				"blue-lightest": "#c4c8d7",
 				"gray-darkest": "#222222",
 				"gray-dark": "#828282",
 				"gray": "#4F4F4F",
@@ -358,11 +359,7 @@
 					"name": "Default"
 				},
 				{
-					"fluid": {
-						"max": "1.125rem",
-						"min": "1rem"
-					},
-					"size": "1.125rem",
+					"size": "1rem",
 					"slug": "base",
 					"name": "Base"
 				},

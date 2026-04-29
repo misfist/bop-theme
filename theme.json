@@ -104,8 +104,8 @@
 			"width": true
 		},
 		"layout": {
-			"contentSize": "1248px",
-			"wideSize": "1440px"
+			"contentSize": "60rem",
+			"wideSize": "76rem"
 		},
 		"spacing": {
 			"margin": false,
@@ -359,7 +359,11 @@
 					"name": "Default"
 				},
 				{
-					"size": "1rem",
+					"fluid": {
+						"max": "1.125rem",
+						"min": "1rem"
+					},
+					"size": "1.125rem",
 					"slug": "base",
 					"name": "Base"
 				},

@@ -7,7 +7,12 @@
     padding: initial;
     position: initial;
     width: auto;
-    clip: none;
+    clip: unset;
     border-width: 0;
     white-space: initial;
+}
+
+h1.wp-block-heading,
+.single-title {
+    letter-spacing: initial;
 }
